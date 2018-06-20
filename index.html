@@ -8,9 +8,17 @@
 
 <body>
     <p onclick="alert('Tu as cliqué sur hello')">Hello</p>
-    
-    <input type="button" value="Dis moi bonjour" 
-        onclick="myName = prompt('Quel est ton nom ?'); alert('Bonjour '+myName); ">
+
+    <input type="button" value="Dis moi bonjour" onclick="sayHello()">
+
+    <script>
+        function sayHello() {
+            var myName = prompt('Quel est ton nom ?');
+            alert('Bonjour ' + myName);
+
+        }
+    </script>
+
 
 </body>
 
