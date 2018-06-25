@@ -5,90 +5,62 @@
 }
 
 body {
-    background-color: #313944;
+    background-color: #fff;
     padding: 5em 20em;
 
 }
 
-h1 {
-    color: #fff;
-    font-family: 'Cormorant Infant';
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 72px;
-    letter-spacing: -1px;
-    margin-bottom: 40px;
+label {
+    color: dimgrey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
     text-align: center;
 }
 
-h1:after{
-    color: #1fcfcb;
-    display: block;
-    content: '. . .';
-    font-size: 26px;
-    line-height: 24px;
-    height: 24px;
-    margin: 48px,auto;
-
-}
-
-h2 {
-    color: #fff;
-    font-family: 'Cormorant Infant';
-    font-size: 54px;
-    font-weight: 700;
-    line-height: 72px;
-    letter-spacing: -1px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-p {
-    color: #bbc8d8;
-    font-family: 'Lato';
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 36px;
-    margin-bottom: 36px;
-    text-align: center;
-
-}
-
-a {
-    color: #1fcfcb;
-    font-family: 'Lato';
-}
-
-a:hover {
-    color: #fff;
-}
-
-#back-to-top {
-    position: fixed;
-    bottom: 3em;
-    right: 3em;
-    background-color: rgba(255,255,255,.9);
-    color: #313943;
+input {
+    width: 100%;
+    padding: 12px 20px; 
     border: none;
-    border-radius: 5px;
-    padding: 1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 0 2em 0 rgba(0,0,0,.25);
-    transition: all .3s ease-in-out;
-    display: inline-block;
+    border-bottom: 2px solid gray
+}
+
+ul {
+    width: 100%;    
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    transition: all .2s ease-in-out;
     opacity: 0;
-    text-decoration: none;
-    font-size: .75em;
+    
+
 }
 
-#back-to-top:hover {
-    background-color: #fff;
-    padding: 1em 3em;
-}
-
-#back-to-top.visible {
+ul.visible {
     opacity: 1;
 }
+
+ul li {
+    border: none;
+    background: rgba(114, 140, 114, 0.3);
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    font-size: 18px; 
+    color: dimgray;
+
+}
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+ul li.highlighted {
+    background: #888;
+    color: #fff;
+    font-weight: 600;
+    
+}
+
+
 
