@@ -10,11 +10,11 @@ resultsCursor = 0;
 //focus on the input
 targetInput.focus();
 
-// Add an event listener to prevent default behaviour on key press
-// targetInput.addEventListener('keydown', function (event) {
-//     if (event.keyCode == 13 || event.keyCode == 40 || event.keyCode == 38)
-//         event.preventDefault();
-// })
+//Add an event listener to prevent default behaviour on key press
+targetInput.addEventListener('keydown', function (event) {
+    if (event.keyCode == 13)
+        event.preventDefault();
+})
 
 // Add the event listener for the inpu keyup
 targetInput.addEventListener('keyup', function (event) {
@@ -24,8 +24,11 @@ targetInput.addEventListener('keyup', function (event) {
         40: down
     */
 
+
+
     results.innerHTML = "";
     toggleResults("hide");
+
 
     if (this.value.length > 0) {
         matches = getMatches(this.value);
