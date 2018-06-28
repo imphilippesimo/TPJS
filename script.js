@@ -24,8 +24,6 @@ targetInput.addEventListener('keyup', function (event) {
         40: down
     */
 
-
-
     results.innerHTML = "";
     toggleResults("hide");
 
@@ -39,12 +37,15 @@ targetInput.addEventListener('keyup', function (event) {
 
     if (results.classList.contains('visible')) {
 
-        //console.log(event.keyCode);
+        
         switch (event.keyCode) {
             case 13:
-                targetInput.value = results.children[resultsCursor].innerHTML;
-                toggleResults("hide");
-                resultsCursor = 0;
+                //récuperer le contenu du résultat sur le quel est le curseur et modifier la valeur de targetInput
+
+                //puis cacher la liste de résultats
+                
+                //remettre le curseur à zéro
+               
                 break;
             case 38:
 
@@ -67,11 +68,11 @@ targetInput.addEventListener('keyup', function (event) {
 
 //Define the function for toogling the result list
 function toggleResults(action) {
-    if (action == 'show') {
-        results.classList.add("visible");
-    } else if (action == 'hide') {
-        results.classList.remove("visible");
-    }
+    //si l'action est show, ajouter l'attribut "visible" à la liste de résultats sinon retirer
+    //astuce:
+    //ajouter un attribut : elem.classList.add('attribut');
+    //retirer un attribut : elem.classList.remove('attribut');
+   
 
 }
 
@@ -79,13 +80,11 @@ function toggleResults(action) {
 function getMatches(inputText) {
     var matchList = [];
 
-    for (var i = 0; i < countryList.length; i++) {
-        if (countryList[i].toLowerCase().indexOf(inputText.toLowerCase()) != -1) {
-            matchList.push(countryList[i]);
-        }
-    }
-
-    return matchList;
+    //parcourir la liste de pays, vérifier pour chaque chaîne de pays si la chaîne entrée y fait partie 
+    //pour ce faire, utiliser la fonction String.indexOf()
+    //si c'est le cas , alors ajouter le pays à la liste des résultats 
+    //enfin de parcours, retourner la iste des pays correspondants.
+   
 
 }
 
@@ -99,7 +98,7 @@ function displayMatches(matchList) {
     }
 
     //the first child get the class of "highlighted"
-    moveCursor(resultsCursor);
+    moveCursor(resultsCursor); //ici resultsCursor = 0
 
     // show the results
     toggleResults('show');
@@ -109,11 +108,7 @@ function displayMatches(matchList) {
 
 //define a function for moving the cursor in the results list
 function moveCursor(pos) {
-    var x = 0;
-    while (x < results.children.length) {
-        results.children.item(x).classList.remove("highlighted");
-        x++;
-
-    }
-    results.children.item(pos).classList.add("highlighted");
+    //algorithme:
+    //se balader dans la liste de résultats et mettre en surbrillance ("highlighted") l'élément se trouvant à la position pos
+    //enlever l'attribut de surbrillance sur tous les autres
 }
